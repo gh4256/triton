@@ -2,8 +2,18 @@ apiVersion: v1
 entries:
   triton:
   - apiVersion: v2
+    appVersion: "22.08"
+    created: "2022-10-04T11:31:15.282056+04:00"
+    description: A example Helm Triton Helm Chart
+    digest: 81fba27a5d4a393d50a0e20f1dfa89619e79f2f92faf41b4672711d00da0f61e
+    name: triton
+    type: application
+    urls:
+    - https://gh4256.github.io/triton/triton-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-10-04T10:37:59.483701+04:00"
+    created: "2022-10-04T11:31:15.281254+04:00"
     description: A Helm chart for Kubernetes
     digest: 61b7fcf489653fe5230b282d1b6efd8d99484d6f99afff41aae8c9f4b0b3232a
     name: triton
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://gh4256.github.io/triton/triton-0.1.0.tgz
     version: 0.1.0
-generated: "2022-10-04T10:37:59.481931+04:00"
+generated: "2022-10-04T11:31:15.279757+04:00"
