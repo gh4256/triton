@@ -9,6 +9,15 @@ image:
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "22.08-py3"
+  command: ["tritonserver"]
+  args:
+    - --model-repository=/models
+
+volumes:
+  nfs:
+    server: ""
+    path: ""
+    readOnly: false
 
 imagePullSecrets: []
 nameOverride: ""
@@ -38,7 +47,8 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80
+  port: 8000
+  nodePort: 1
 
 ingress:
   enabled: false

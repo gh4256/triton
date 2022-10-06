@@ -20,6 +20,12 @@ spec:
       labels:
         {{- include "triton.selectorLabels" . | nindent 8 }}
     spec:
+      volumes:
+      - name: models
+        nfs:
+          server: {{ .Values.volumes.nfs.server | quote }}
+          path: {{ .Values.volumes.nfs.path | quote }}
+          readOnly: {{ .Values.volumes.nfs.readOnly }}
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -32,18 +38,29 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          {{- range .Values.image.command }}
+          command:
+            - {{ . | quote }}
+          {{- end }}
+          {{- range .Values.image.args }}
+          args:
+            - {{ . | quote}}
+          {{- end }}
+          volumeMounts:
+            - mountPath: /models
+              name: models
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: 8000
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /
+              path: /v2
               port: http
           readinessProbe:
             httpGet:
-              path: /
+              path: /v2
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
