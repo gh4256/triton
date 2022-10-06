@@ -3,7 +3,17 @@ entries:
   triton:
   - apiVersion: v2
     appVersion: "22.08"
-    created: "2022-10-04T11:31:15.282056+04:00"
+    created: "2022-10-06T16:14:22.077612+04:00"
+    description: A triton helm chart for Rampart generic service
+    digest: 20d61d553d69df7a7325b77194a2704186908adf0e1101a10dd58885d0ec8a17
+    name: triton
+    type: application
+    urls:
+    - https://gh4256.github.io/triton/triton-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: "22.08"
+    created: "2022-10-06T16:14:22.076633+04:00"
     description: A example Helm Triton Helm Chart
     digest: 81fba27a5d4a393d50a0e20f1dfa89619e79f2f92faf41b4672711d00da0f61e
     name: triton
@@ -13,7 +23,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-10-04T11:31:15.281254+04:00"
+    created: "2022-10-06T16:14:22.075735+04:00"
     description: A Helm chart for Kubernetes
     digest: 61b7fcf489653fe5230b282d1b6efd8d99484d6f99afff41aae8c9f4b0b3232a
     name: triton
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://gh4256.github.io/triton/triton-0.1.0.tgz
     version: 0.1.0
-generated: "2022-10-04T11:31:15.279757+04:00"
+generated: "2022-10-06T16:14:22.074747+04:00"
